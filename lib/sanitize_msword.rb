@@ -1,6 +1,8 @@
 class String
   def sanitize_word_html
     gsub!(/\n|\r| class=(")?Mso[a-zA-Z]+(")?/){""}
+    gsub!(/\&lt\;/){"<"}
+    gsub!(/\&gt\;/){">"}
     gsub!(/<!--(.*?)-->/){""}
     gsub!(/<!\[(.*?)\]>/){""}
     gsub!(/<(\/)*(meta|link|div|span|\\?xml:|st1:|o:|font)(.*?)>/){""}
