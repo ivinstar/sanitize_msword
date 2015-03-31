@@ -7,9 +7,11 @@ class String
     gsub!(/<!\[(.*?)\]>/){""}
     gsub!(/<(\/)*(meta|link|div|span|\\?xml:|st1:|o:|font)(.*?)>/){""}
     gsub!(/�/){""}
-    ["style", "script", "applet", "embed", "noframes", "noscript"].map{|i| self.gsub!(/<#{i}.*?#{i}(.*?)>/){""} }
-    ["style", "start"].map{|i| self.gsub!(/\s#{i}=\"(.*?)\"/){""} }
+    ["style", "applet", "embed", "noframes", "noscript"].map{|i| gsub!(/<#{i}.*?#{i}(.*?)>/){""} }
+    ["style", "start"].map{|i| gsub!(/\s#{i}=\"(.*?)\"/){""} }
     gsub!(/�/){'"'}
+    gsub!(/(<script>)/){"&ltscript&gt"}
+    gsub!(/(<\/script>)/){"&lt/script&gt"}
     gsub!(/�/){'"'}
     gsub!(/\s\s+/){""}
     gsub!(/<p><\/p>/){""}
