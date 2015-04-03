@@ -3,6 +3,7 @@ class String
     gsub!(/\n|\r| class=(")?Mso[a-zA-Z]+(")?/){""}
     gsub!(/\&lt\;/){"<"}
     gsub!(/\&gt\;/){">"}
+    gsub!(/\&nbsp\;/){" "}
     gsub!(/<!--(.*?)-->/){""}
     gsub!(/<!\[(.*?)\]>/){""}
     gsub!(/<(\/)*(meta|link|div|span|\\?xml:|st1:|o:|font)(.*?)>/){""}
