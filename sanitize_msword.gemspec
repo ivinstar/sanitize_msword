@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name          = 'sanitize_msword'
-  s.version       = '0.0.2'
+  s.version       = '0.0.3'
   s.date          = '2015-01-26'
   s.summary       = "Clean MS Word html"
   s.authors       = ["Tatiana Podymova, Vladimir Suvorov, Igor Dranichnikov, Igor Lemeshkin"]
