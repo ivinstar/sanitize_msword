@@ -11,6 +11,7 @@ class String
     ["style", "start"].map{|i| gsub!(/\s#{i}=\"(.*?)\"/){""} }
     gsub!(/�/){'"'}
     gsub!(/(<script>)/){"&ltscript&gt"}
+    gsub!(/(<script type=\"text/javascript\">)/){'&ltscript type=\"text/javascript\"&gt'}
     gsub!(/(<\/script>)/){"&lt/script&gt"}
     gsub!(/�/){'"'}
     gsub!(/\s\s+/){""}
